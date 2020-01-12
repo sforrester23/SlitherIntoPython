@@ -2,7 +2,7 @@
 # UPGRADE: 8-bit binary converter
 import sys
 
-user_input = input("4-bit binary number please good fellow: ")
+user_input = input("8-bit binary number please good fellow: ")
 
 number_total = 0
 counter = 0
