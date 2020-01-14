@@ -6,7 +6,6 @@ with open(sys.argv[1], "r") as inp:
     # make the line into a list
     # then we can decipher the point at which each separately spaced entry changes from letters to numbers
     line_list = line.split()
-    print(line_list)
 
     # find the point in the list where the letters become numbers and store it as i
     i = 0
