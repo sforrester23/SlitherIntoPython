@@ -1,5 +1,7 @@
 # take two lists, combine them and then order them
 
+
+# collect the two lists, break collection when user inputs 0
 number = int(input("Number please: "))
 number_list_1 = []
 
@@ -14,11 +16,12 @@ while number != 0:
     number_list_2.append(number)
     number = int(input("Number please: "))
 
+# combine the two lists, which are unlikely to be sorted
 number_list = number_list_1 + number_list_2
 
 # repeating list indexer:
 i = 0
-# indexer for point up to where list is in order:
+# indexer for point up to where list has been checked to be in order:
 j = 0
 
 # keep doing this until j is the same length as the list
@@ -35,7 +38,7 @@ while j < len(number_list):
     # swap the numbers around by assigning a dummy variable
     # u is where the minimum that has been found is held
     u = number_list[i+j]
-    # move the position where the minimum will go to where the minimum was
+    # move the item in the position where the minimum will go to where the minimum was (swap them)
     number_list[i+j] = number_list[j]
     # place the minimum to the point j, below which everything in the list is already lower than this minimum
     number_list[j] = u
