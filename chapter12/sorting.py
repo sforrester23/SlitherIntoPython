@@ -29,6 +29,24 @@ def selection_sort(a):
     return a
 
 
+def selection_sort_2(a):
+    i = 0
+    while i < len(a):
+        p = i
+        j = i + 1
+        while j < len(a):
+            if a[j] < a[p]:
+                p = j
+            j += 1
+
+        tmp = a[p]
+        a[p] = a[i]
+        a[i] = tmp
+
+        i += 1
+    return a
+
+
 def bubble_sort(a):
     # bubble sort, attempted to do an insertion sort
     # loop through the list with i
@@ -42,8 +60,6 @@ def bubble_sort(a):
                 u = a[j]
                 a[j] = a[j + 1]
                 a[j + 1] = u
-            print("i:", i, "j:", j)
-            print(a)
             # increment j, check the next pair of adjacent values
             j += 1
         # increment i, so we can check the whole list again and compare newly positioned adjacent values
@@ -57,20 +73,23 @@ def insertion_sort(a):
     i = len(a) - 2  # Assume the last element is sorted
     while i >= 0:  # i can be at least 0 or index error
         v = a[i]  # The value we want to insert into the correct position
-        print(v)
         p = i  # The position the element should be inserted into to
         while p < len(a) - 1 and v > a[p + 1]:  # While value is > element to right
-            a[p] = a[p + 1]  # Move the element to right down
+            a[p] = a[p + 1]  # Move the element to right down one
             p += 1  # Increment p (move one position right)
-            print("inside loop:", a)
         # when loop breaks, we've found the position for our value to land
         a[p] = v  # Found correct position so insert the value
-        print("outside loop", a)
 
         i -= 1  # Move to next element
     return a
 
 
-# print(selection_sort([3, 4, 6, 1, 9]))
-# print(insertion_sort([909, 3113, 420, 151, 206]))
-print(bubble_sort([9, 7, 3, 8, 10, 15, 2]))
+def main():
+    print(selection_sort([3, 4, 6, 1, 9]))
+    print(insertion_sort([909, 3113, 420, 151, 206]))
+    print(bubble_sort([9, 7, 3, 8, 10, 15, 2]))
+    print(selection_sort_2([9, 7, 3, 8, 10, 15, 2]))
+
+
+if __name__ == "__main__":
+    main()
