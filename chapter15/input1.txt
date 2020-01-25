@@ -1,0 +1,6 @@
+java python c++
+python scala c
+java haskell javascript
+javascript python c
+c c++ c#
+c# haskell java
