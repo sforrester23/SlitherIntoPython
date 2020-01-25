@@ -36,8 +36,6 @@ def times_tables_complex(number, form="", short=False):
         i += 1
 
 
-
-
 def main():
     # times_tables(1)
     # times_tables(15)
